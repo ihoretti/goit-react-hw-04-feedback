@@ -1,0 +1,44 @@
+.feedback__buttonWrap {
+  display: block;
+  margin-top: 20px;
+}
+
+.feedback__button {
+  text-decoration: none;
+  display: inline-block;
+  width: 140px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 45px;
+  /* margin: 10px 20px; */
+  font-size: 11px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 3px;
+  font-weight: 600;
+  color: #524f4e;
+  background: white;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.feedback__button:hover {
+  background-color: rgb(255, 255, 0);
+  box-shadow: 0 15px 20px rgba(255, 255, 0, 0.4);
+  color: white;
+  transform: translateY(-7px);
+}
+
+.feedback__button:first-child:hover {
+  background: #00ff99;
+  box-shadow: 0 15px 20px rgba(0, 255, 13, 0.4);
+}
+
+.feedback__button:last-child:hover {
+  background: #ff0000;
+  box-shadow: 0 15px 20px rgba(255, 0, 0, 0.4);
+}
+
+.feedback__button + .feedback__button {
+  margin-left: 10px;
+}
