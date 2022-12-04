@@ -1,0 +1,24 @@
+.feedback {
+  text-align: center;
+  padding: 20px;
+
+  width: 600px;
+  height: auto;
+  background-color: rgb(48, 83, 83);
+  margin: 0 auto;
+  margin-top: 10vh;
+
+  border-radius: 10px;
+
+  box-shadow: 10px 10px 8px 2px rgba(0, 0, 0, 0.3);
+}
+
+.feedback__header {
+  font-size: 0;
+  color: rgb(255, 255, 255);
+}
+
+.feedback__subheader {
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
