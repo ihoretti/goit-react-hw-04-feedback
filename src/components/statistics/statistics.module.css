@@ -1,0 +1,21 @@
+.statictics {
+  margin-top: 20px;
+}
+
+.good {
+  color: rgb(0, 255, 255);
+}
+.neutral {
+  color: rgb(255, 255, 0);
+}
+.bad {
+  color: rgb(255, 0, 0);
+}
+
+h2 {
+  color: rgb(255, 255, 255);
+}
+
+span {
+  color: rgb(255, 255, 255);
+}
