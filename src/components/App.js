@@ -3,25 +3,13 @@ import Section from './section/section';
 import FeedbackOptions from './feedbackOptions/FeedbackOptions';
 import Statistics from './statistics/statistics';
 import Notification from 'components/notification/notification';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 
 export class App extends Component {
-  static defaultProps = {
+  state = {
     good: 0,
     neutral: 0,
     bad: 0,
-  };
-
-  static propTypes = {
-    good: PropTypes.number.isRequired,
-    neutral: PropTypes.number.isRequired,
-    bad: PropTypes.number.isRequired,
-  };
-
-  state = {
-    good: this.props.good,
-    neutral: this.props.neutral,
-    bad: this.props.bad,
   };
 
   // goodIncrement = () => {
@@ -51,11 +39,7 @@ export class App extends Component {
     this.state.good + this.state.neutral + this.state.bad;
 
   countPositiveFeedbackPercentage = () =>
-    Number.parseInt(
-      (this.state.good /
-        (this.state.good + this.state.neutral + this.state.bad)) *
-        100
-    );
+    Number.parseInt((this.state.good / this.countTotalFeedback()) * 100) || 0;
 
   render() {
     const { good, neutral, bad } = this.state;
@@ -69,7 +53,7 @@ export class App extends Component {
             neutralIncrement={this.neutralIncrement}
             badIncrement={this.badIncrement} /> */}
         <FeedbackOptions
-          options={objKey}
+          options={{ ...this.state }}
           onLeaveFeedback={this.onLeaveFeedback}
         />
 
