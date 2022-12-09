@@ -1,22 +1,33 @@
 import PropTypes from 'prop-types';
-import shortid from 'shortid';
+//import shortid from 'shortid';
 import style from './FeedbackOptions.module.css';
 
+const classConfig = {
+  good: style.good,
+  neutral: style.neutral,
+  bad: style.bad,
+};
 export default function FeedbackOptions({ options, onLeaveFeedback }) {
   // console.log(options);
   // console.log(onLeaveFeedback)
+  const keys = Object.keys(options);
+
+  const newOptions = keys.map(option => ({
+    name: option,
+    btnClass: classConfig[option],
+  }));
   return (
     <>
       <div className={style.feedback__buttonWrap}>
-        {options.map(option => (
+        {newOptions.map(({ name, btnClass }) => (
           <button
-            className={style.feedback__button}
-            key={shortid.generate()}
+            className={btnClass}
+            key={name}
             type="button"
-            name={option}
+            name={name}
             onClick={onLeaveFeedback}
           >
-            {option}
+            {name}
           </button>
         ))}
       </div>
@@ -25,10 +36,14 @@ export default function FeedbackOptions({ options, onLeaveFeedback }) {
 }
 
 FeedbackOptions.propTypes = {
-  options: PropTypes.array.isRequired,
+  options: PropTypes.exact({
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  }).isRequired,
+
   onLeaveFeedback: PropTypes.func.isRequired,
 };
-
 // export default function Buttons({ goodIncrement, neutralIncrement, badIncrement }) {
 //     return (
 //         <div className={style.feedback__buttonWrap}>
