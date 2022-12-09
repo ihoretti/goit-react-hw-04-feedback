@@ -21,22 +21,28 @@
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
   transition: 0.3s;
 }
+.good,
+.neutral,
+.bad {
+  composes: feedback__button;
+}
 
-.feedback__button:hover {
+.good:hover {
+  background: #00ff99;
+  box-shadow: 0 15px 20px rgba(0, 255, 13, 0.4);
+  transform: translateY(-7px);
+}
+.neutral:hover {
   background-color: rgb(255, 255, 0);
   box-shadow: 0 15px 20px rgba(255, 255, 0, 0.4);
   color: white;
   transform: translateY(-7px);
 }
 
-.feedback__button:first-child:hover {
-  background: #00ff99;
-  box-shadow: 0 15px 20px rgba(0, 255, 13, 0.4);
-}
-
-.feedback__button:last-child:hover {
+.bad:hover {
   background: #ff0000;
   box-shadow: 0 15px 20px rgba(255, 0, 0, 0.4);
+  transform: translateY(-7px);
 }
 
 .feedback__button + .feedback__button {
