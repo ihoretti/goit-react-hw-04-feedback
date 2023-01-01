@@ -45,7 +45,7 @@ export const App = () => {
 
     const buttonsName = ['good', 'neutral', 'bad'];
 
-    // const objKey = Object.keys(this.state);
+    const objKey = Object.keys(this.state);
 
     return (
       <Section title={'statictics form'} subtitle={'Please leave feedback'}>
