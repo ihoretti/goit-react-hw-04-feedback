@@ -6,12 +6,6 @@ import Notification from 'components/notification/notification';
 import { useState } from 'react';
 //import PropTypes from 'prop-types';
 
-//export class App extends Component {
-// state = {
-// good: 0,
-//neutral: 0,
-//bad: 0,
-//};
 export const App = () => {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
@@ -41,19 +35,10 @@ const onLeaveFeedback = e => {
   }));
 };
 
-//countTotalFeedback = () =>
-// this.state.good + this.state.neutral + this.state.bad;
-
 const countTotalFeedback = good + neutral + bad;
-
-//countPositiveFeedbackPercentage = () =>
-//Number.parseInt((this.state.good / this.countTotalFeedback()) * 100) || 0;
 
 const countPositiveFeedbackPercentage =
   Number.parseInt((good / countTotalFeedback()) * 100) || 0;
-
-//render() {
-//const { good, neutral, bad } = this.state;
 
 const objKey = Object.keys(useState);
 
