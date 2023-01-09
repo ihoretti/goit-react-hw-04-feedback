@@ -11,21 +11,6 @@ export const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  // goodIncrement = () => {
-  // this.setState(prevState => ({
-  //     good: prevState.good + 1,
-  // }));
-  // };
-  // neutralIncrement = () => {
-  // this.setState(prevState => ({
-  //     neutral: prevState.neutral + 1,
-  // }));
-  // };
-  // badIncrement = () => {
-  // this.setState(prevState => ({
-  //     bad: prevState.bad + 1,
-  // }));
-  // };
   const countTotalFeedback = good + neutral + bad;
 
   const buttonChangeStatistics = e => {
@@ -44,8 +29,6 @@ export const App = () => {
       Number.parseInt((good / countTotalFeedback()) * 100) || 0;
 
     const buttonsName = ['good', 'neutral', 'bad'];
-
-    const objKey = Object.keys(this.state);
 
     return (
       <Section title={'statictics form'} subtitle={'Please leave feedback'}>
