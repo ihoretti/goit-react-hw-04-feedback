@@ -8,8 +8,6 @@ const classConfig = {
   bad: style.bad,
 };
 export default function FeedbackOptions({ options, onLeaveFeedback }) {
-  // console.log(options);
-  // console.log(onLeaveFeedback)
   const keys = Object.keys(options);
 
   const newOptions = keys.map(option => ({
